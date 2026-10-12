@@ -1,11 +1,7 @@
-from uuid import main
-def health_payload():
-    return {
-        "status": "ok",
-        "version": "dev"
-    }
-    
+from fastapi import FastAPI
 
+app = FastAPI()
 
-if __name__ == "__main__":
-    main()
+@app.get("/health")
+def health():
+    return {"status": "ok"}
